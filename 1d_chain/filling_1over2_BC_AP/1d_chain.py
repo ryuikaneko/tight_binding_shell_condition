@@ -48,7 +48,7 @@ def main():
     list_Lx = []
     list_enedens = []
     file = open("dat_1d_chain",'w')
-    file.write("# Lx filling(=n/2) BCx num_electrons chemi_potential ene ene_dens gap shell_cond\n")
+    file.write("# Lx filling(=n/2) BCx num_electrons(=nup=ndown) chemi_potential ene ene_dens gap shell_cond\n")
     for Lx in range(4,50,2):
         filling, numel, chemipo, totene, gap, shellcond, \
             list_enekx, list_intkx, xshift = \

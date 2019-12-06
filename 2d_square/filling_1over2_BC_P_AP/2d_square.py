@@ -55,8 +55,8 @@ def main():
     list_L = []
     list_enedens = []
     file = open("dat_2d_square",'w')
-    file.write("# L filling(=n/2) BCx BCy num_electrons chemi_potential ene ene_dens gap shell_cond\n")
-    for L in range(4,50,2):
+    file.write("# L filling(=n/2) BCx BCy num_electrons(=nup=ndown) chemi_potential ene ene_dens gap shell_cond\n")
+    for L in range(2,50,2):
         Lx = L
         Ly = L
         filling, numel, chemipo, totene, gap, shellcond, \
@@ -73,6 +73,7 @@ def main():
     plt.xlabel("1/L^2")
     plt.ylabel("E/L^2")
     plt.plot(1.0/list_L**2,list_enedens,color='blue',marker='o',markerfacecolor='white')
+    plt.axhline(y=-8.0/np.pi**2,color='red')
     plt.savefig("fig_2d_square_enedens.png")
     plt.cla()
     plt.clf()

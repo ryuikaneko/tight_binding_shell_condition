@@ -69,8 +69,8 @@ def main():
     list_L = []
     list_enedens = []
     file = open("dat_2d_kagome",'w')
-    file.write("# L filling(=n/2) BCx BCy num_electrons chemi_potential ene ene_dens gap shell_cond\n")
-    for L in range(4,50,2):
+    file.write("# L filling(=n/2) BCx BCy num_electrons(=nup=ndown) chemi_potential ene ene_dens gap shell_cond\n")
+    for L in range(2,50,2):
         Lx = L
         Ly = L
         filling, numel, chemipo, totene, gap, shellcond, \
