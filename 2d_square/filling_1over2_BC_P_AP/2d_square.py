@@ -24,8 +24,8 @@ def calc_k_ene(Lx,Ly,BCx,BCy):
         yshift = 0.0
     else:
         yshift = 0.0
-    list_kx = np.array([2.0*np.pi*((x+xshift)/Lx-0.5) for x in range(Lx)])
-    list_ky = np.array([2.0*np.pi*((y+yshift)/Ly-0.5) for y in range(Ly)])
+    list_kx = np.array([2.0*np.pi*((x+xshift)/Lx-float(Lx//2)/Lx) for x in range(Lx)])
+    list_ky = np.array([2.0*np.pi*((y+yshift)/Ly-float(Ly//2)/Ly) for y in range(Ly)])
     list_enekxky = np.array([ene(kx,ky) for ky in list_ky for kx in list_kx])
     list_intkxky = np.array([Lx*y+x for y in range(Ly) for x in range(Lx)])
     return list_enekxky, list_intkxky, xshift, yshift
@@ -86,8 +86,8 @@ def main():
         calc_shell_cond(Lx,Ly,BCx,BCy,filling_numer,filling_denom)
     list_intkx = list_intkxky%Lx
     list_intky = list_intkxky//Lx
-    list_kx = (list_intkx.astype(np.float64)+xshift)/Lx-0.5
-    list_ky = (list_intky.astype(np.float64)+yshift)/Ly-0.5
+    list_kx = (list_intkx.astype(np.float64)+xshift)/Lx-float(Lx//2)/Lx
+    list_ky = (list_intky.astype(np.float64)+yshift)/Ly-float(Ly//2)/Ly
     plt.xlabel("kx/pi")
     plt.ylabel("ky/pi")
     plt.xticks([-0.5,-0.25,0,0.25,0.5])

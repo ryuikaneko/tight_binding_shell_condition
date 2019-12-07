@@ -18,7 +18,7 @@ def calc_k_ene(Lx,BCx):
         xshift = 0.0
     else:
         xshift = 0.0
-    list_kx = np.array([2.0*np.pi*((x+xshift)/Lx-0.5) for x in range(Lx)])
+    list_kx = np.array([2.0*np.pi*((x+xshift)/Lx-float(Lx//2)/Lx) for x in range(Lx)])
     list_enekx = np.array([ene(kx) for kx in list_kx])
     list_intkx = np.array([x for x in range(Lx)])
     return list_enekx, list_intkx, xshift
@@ -72,7 +72,7 @@ def main():
     filling, numel, chemipo, totene, gap, shellcond, \
         list_enekx, list_intkx, xshift = \
         calc_shell_cond(Lx,BCx,filling_numer,filling_denom)
-    list_kx = (list_intkx.astype(np.float64)+xshift)/Lx-0.5
+    list_kx = (list_intkx.astype(np.float64)+xshift)/Lx-float(Lx//2)/Lx
     list_ky = np.array([0 for x in range(Lx)])
     plt.xlabel("kx/pi")
     plt.ylabel("")

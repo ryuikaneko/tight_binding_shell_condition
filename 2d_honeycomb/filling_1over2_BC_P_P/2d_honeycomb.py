@@ -27,8 +27,8 @@ def calc_k_ene(Lorb,Lx,Ly,BCx,BCy):
         yshift = 0.0
     else:
         yshift = 0.0
-    list_kx = np.array([2.0*np.pi*((x+xshift)/Lx-0.5) for x in range(Lx)])
-    list_ky = np.array([2.0*np.pi*((y+yshift)/Ly-0.5) for y in range(Ly)])
+    list_kx = np.array([2.0*np.pi*((x+xshift)/Lx-float(Lx//2)/Lx) for x in range(Lx)])
+    list_ky = np.array([2.0*np.pi*((y+yshift)/Ly-float(Ly//2)/Ly) for y in range(Ly)])
     list_enekxky = np.array([ene(orb,kx,ky) for ky in list_ky for kx in list_kx for orb in range(Lorb)])
     list_intkxky = np.array([Lorb*(Lx*y+x)+orb for y in range(Ly) for x in range(Lx) for orb in range(Lorb)])
     return list_enekxky, list_intkxky, xshift, yshift
@@ -93,8 +93,8 @@ def main():
     list_intorb = list_intkxky%Lorb
     list_intkx = (list_intkxky//Lorb)%Lx
     list_intky = (list_intkxky//Lorb)//Lx
-    list_kx = (list_intkx.astype(np.float64)+xshift)/Lx-0.5
-    list_ky = (list_intky.astype(np.float64)+yshift)/Ly-0.5
+    list_kx = (list_intkx.astype(np.float64)+xshift)/Lx-float(Lx//2)/Lx
+    list_ky = (list_intky.astype(np.float64)+yshift)/Ly-float(Ly//2)/Ly
     plt.xlabel("kx/pi")
     plt.ylabel("ky/pi")
     plt.xticks([-0.5,-0.25,0,0.25,0.5])
