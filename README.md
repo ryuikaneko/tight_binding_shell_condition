@@ -26,7 +26,6 @@
   * "Number of electrons" = number of up spins = number of down spins
 
 * Results (DOS)
-
   * Chain
 ![DOS chain](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/1d_chain/filling_1over2_BC_AP/fig_1d_chain_dos.png "DOS chain")
 
