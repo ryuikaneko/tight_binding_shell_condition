@@ -29,22 +29,17 @@
   * DOS
     * 1D
       * Chain
-
 ![DOS chain](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/1d_chain/filling_1over2_BC_AP/fig_1d_chain_dos.png "DOS chain")
 
     * 2D
       * Square
-
 ![DOS square](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/2d_square/filling_1over2_BC_P_AP/fig_2d_square_dos.png "DOS square")
 
       * Triangular
-
 ![DOS triangular](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/2d_triangular/filling_1over2_BC_P_AP/fig_2d_triangular_dos.png "DOS triangular")
 
       * Honeycomb
-
 ![DOS honeycomb](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/2d_honeycomb/filling_1over2_BC_P_AP/fig_2d_honeycomb_dos.png "DOS honeycomb")
 
       * Kagome
-
 ![DOS kagome](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/2d_kagome/filling_1over2_BC_P_AP/fig_2d_kagome_dos.png "DOS kagome")
