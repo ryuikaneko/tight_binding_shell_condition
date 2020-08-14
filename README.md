@@ -40,3 +40,6 @@
 
   * Kagome\
 ![DOS kagome](https://raw.githubusercontent.com/ryuikaneko/tight_binding_shell_condition/master/2d_kagome/filling_1over2_BC_P_AP/fig_2d_kagome_dos.png "DOS kagome")
+
+* References
+  * https://arxiv.org/abs/2008.05544
